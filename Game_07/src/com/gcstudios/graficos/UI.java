@@ -53,11 +53,6 @@ public class UI {
 		g.setFont(new Font("arial",Font.BOLD,23));
 		g.drawString("PONTOS: "+ Game.score, 550, 60);
 		
-		g.setColor(Color.red);
-		g.fillRect(Game.WIDTH * Game.SCALE - 170, 6,150,25);
-		
-		g.setColor(Color.green);
-		g.fillRect(Game.WIDTH * Game.SCALE - 170, 6,(int)((Game.life/100) * 150), 25);
 	}
 	
 }
