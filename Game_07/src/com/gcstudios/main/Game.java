@@ -47,7 +47,6 @@ public class Game extends Canvas implements Runnable,KeyListener,MouseListener,M
 	
 	
 	public static int score = 0;
-	public static double life = 100;
 	
 
 	
