@@ -18,7 +18,6 @@ public class Enemy extends Entity{
 	public void tick() {
 	
 		if(y >= Game.HEIGHT) {
-			Game.life--;
 			Game.entities.remove(this);
 			return;
 		}
