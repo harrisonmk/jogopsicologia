@@ -141,7 +141,7 @@ public class Game extends Canvas implements Runnable,KeyListener,MouseListener,M
 		g.setColor(new Color(0,0,0));
 		g.fillRect(0, 0,WIDTH,HEIGHT);
 		g.drawImage(GAME_BACKGROUND,0, 0,null);
-		/*Renderização do jogo*/
+		/*RenderizaÃ§Ã£o do jogo*/
 		//Graphics2D g2 = (Graphics2D) g;
 		Collections.sort(entities,Entity.nodeSorter);
 		for(int i = 0; i < entities.size(); i++) {
@@ -197,7 +197,7 @@ public class Game extends Canvas implements Runnable,KeyListener,MouseListener,M
 		
 		}
 		
-		if(e.getKeyCode() == KeyEvent.VK_Z) {
+		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
 			player.isShooting = true;
 		}
 	}
