@@ -10,6 +10,7 @@ public class Player extends Entity{
 	public boolean right,left;
 	
 	public boolean isShooting = false;
+	public int quantidadeTiros = 0;
 	
 	public Player(int x, int y, int width, int height,double speed,BufferedImage sprite) {
 		super(x, y, width, height,speed,sprite);
@@ -38,6 +39,38 @@ public class Player extends Entity{
 			Game.entities.add(bullet);
 		}
 		
+	}
+
+	public boolean isRight() {
+		return right;
+	}
+
+	public void setRight(boolean right) {
+		this.right = right;
+	}
+
+	public boolean isLeft() {
+		return left;
+	}
+
+	public void setLeft(boolean left) {
+		this.left = left;
+	}
+
+	public boolean isShooting() {
+		return isShooting;
+	}
+
+	public void setShooting(boolean isShooting) {
+		this.isShooting = isShooting;
+	}
+
+	public int getQuantidadeTiros() {
+		return quantidadeTiros;
+	}
+
+	public void setQuantidadeTiros(int quantidadeTiros) {
+		this.quantidadeTiros = quantidadeTiros;
 	}
 	
 	

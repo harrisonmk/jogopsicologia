@@ -176,7 +176,7 @@ public class Game extends Canvas implements Runnable,KeyListener,MouseListener,M
 			}
 			
 			if(System.currentTimeMillis() - timer >= 1000){
-				System.out.println("FPS: "+ frames);
+				//System.out.println("FPS: "+ frames);
 				frames = 0;
 				timer+=1000;
 			}
@@ -196,8 +196,14 @@ public class Game extends Canvas implements Runnable,KeyListener,MouseListener,M
 		
 		}
 		
+	
 		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+			if((player.getX() == Game.WIDTH-250) || (player.getX() == Game.WIDTH-64)) {
 			player.isShooting = true;
+			int quantidade = 1;
+			quantidade += player.quantidadeTiros++;
+			System.out.println(quantidade);
+		 }
 		}
 	}
 
