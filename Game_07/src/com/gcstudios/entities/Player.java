@@ -24,10 +24,12 @@ public class Player extends Entity{
 			x-=speed;
 		}
 		
-		if(x >= Game.WIDTH) {
-			x = -16;
-		}else if(x+16 < 0 ) {
-			x = Game.WIDTH;
+		if(x == Game.WIDTH-251) {
+		x = Game.WIDTH-250;
+		}
+		
+		else if(x == Game.WIDTH-63) {
+		x = Game.WIDTH-64;
 		}
 		
 		//Sistema de tiro!
