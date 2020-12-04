@@ -196,9 +196,17 @@ public class Game extends Canvas implements Runnable,KeyListener,MouseListener,M
 		
 		}
 		
-	
+		
+		
 		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+
 			if((player.getX() == Game.WIDTH-250) || (player.getX() == Game.WIDTH-64)) {
+				try {
+					Thread.sleep( 4 * 1000 );
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}				
 			player.isShooting = true;
 			int quantidade = 1;
 			quantidade += player.quantidadeTiros++;

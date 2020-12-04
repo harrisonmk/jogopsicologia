@@ -26,19 +26,25 @@ public class Player extends Entity{
 		
 		if(x == Game.WIDTH-251) {
 		x = Game.WIDTH-250;
+
 		}
 		
 		else if(x == Game.WIDTH-63) {
 		x = Game.WIDTH-64;
+	
 		}
 		
 		//Sistema de tiro!
 		if(isShooting) {
 			isShooting = false;
+		
 			int xx = this.getX() + 5;
 			int yy = this.getY();
+	
 			Bullet bullet = new Bullet(xx,yy,3,3,4,null);
 			Game.entities.add(bullet);
+			
+			
 		}
 		
 	}

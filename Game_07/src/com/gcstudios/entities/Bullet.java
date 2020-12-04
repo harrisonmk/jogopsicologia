@@ -22,6 +22,7 @@ public class Bullet extends Entity{
 	}
 	
 	public void render(Graphics g) {
+		 
 		g.setColor(Color.yellow);
 		g.fillRect(this.getX(), this.getY(), width, height);
 	}
