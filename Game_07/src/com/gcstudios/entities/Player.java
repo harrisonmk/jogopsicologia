@@ -10,7 +10,7 @@ public class Player extends Entity{
 	public boolean right,left;
 	
 	public boolean isShooting = false;
-	public int quantidadeTiros = 0;
+	public static int quantidadeTiros = 0;
 	
 	public Player(int x, int y, int width, int height,double speed,BufferedImage sprite) {
 		super(x, y, width, height,speed,sprite);
@@ -26,11 +26,23 @@ public class Player extends Entity{
 		
 		if(x == Game.WIDTH-251) {
 		x = Game.WIDTH-250;
+		try {
+			Thread.sleep( 4 * 1000 );
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		}
 		
 		else if(x == Game.WIDTH-63) {
 		x = Game.WIDTH-64;
+		try {
+			Thread.sleep( 4 * 1000 );
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	
 		}
 		

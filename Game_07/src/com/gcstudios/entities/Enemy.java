@@ -9,7 +9,7 @@ import com.gcstudios.main.Game;
 public class Enemy extends Entity{
 	
 	
-	public int life = 3;
+	public int life = 5;
 
 	public Enemy(double x, double y, int width, int height, double speed, BufferedImage sprite) {
 		super(x, y, width, height, speed, sprite);
@@ -34,6 +34,7 @@ public class Enemy extends Entity{
 						Game.entities.add(explosion);
 						Game.score++;
 						Game.entities.remove(this);
+					
 						return;
 					}
 					break;

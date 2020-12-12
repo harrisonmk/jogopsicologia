@@ -1,6 +1,7 @@
 package com.gcstudios.main;
 
 import java.awt.Canvas;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -11,7 +12,11 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -25,6 +30,7 @@ import com.gcstudios.entities.Player;
 import com.gcstudios.graficos.Spritesheet;
 import com.gcstudios.graficos.UI;
 import com.gcstudios.world.World;
+import java.util.UUID;
 
 public class Game extends Canvas implements Runnable,KeyListener,MouseListener,MouseMotionListener{
 
@@ -54,6 +60,7 @@ public class Game extends Canvas implements Runnable,KeyListener,MouseListener,M
 	
 
 	public UI ui;
+	int quantidade;
 	
 	public Game(){
 		addKeyListener(this);
@@ -201,18 +208,43 @@ public class Game extends Canvas implements Runnable,KeyListener,MouseListener,M
 		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
 
 			if((player.getX() == Game.WIDTH-250) || (player.getX() == Game.WIDTH-64)) {
-				try {
-					Thread.sleep( 4 * 1000 );
-				} catch (InterruptedException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}				
+						
 			player.isShooting = true;
-			int quantidade = 1;
-			quantidade += player.quantidadeTiros++;
+			quantidade = 1;
+			quantidade += Player.quantidadeTiros++;
+			
+			
+
+		      int resultado = quantidade;
+		      
+		      
+				try {
+					
+					
+					BufferedWriter arq = new BufferedWriter(new FileWriter("resultado.txt")); 
+					
+					arq.write("Quantidade de tiros usado: "+resultado);
+					arq.newLine();
+		           // PrintWriter gravarArq = new PrintWriter(arq);
+		            //gravarArq.println("Quantidade de tiros usado: "+resultado);
+		            //gravarArq.close();
+				
+	           arq.close();
+
+	
 			System.out.println(quantidade);
-		 }
+		 }catch(Exception e1) {
+				e1.printStackTrace(); 
+			}
 		}
+		
+		
+
+	    
+       
+	}
+		
+		
 	}
 
 	@Override
